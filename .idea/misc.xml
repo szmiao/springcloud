@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/code-modules/user/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-zuul/pom.xml" />
       </list>
     </option>
   </component>

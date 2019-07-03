@@ -8,6 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="eureka" />
+        <module name="gateway-zuul" />
+        <module name="ordinary-user" />
+        <module name="user" />
       </profile>
     </annotationProcessing>
   </component>
