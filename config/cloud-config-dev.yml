@@ -1,0 +1,13 @@
+eureka:
+  instance:
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+    # docker 部署开启
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+
+    client:
+      serviceUrl:
+         defaultZone: ${EUREKA_DEFAULTZONE}
