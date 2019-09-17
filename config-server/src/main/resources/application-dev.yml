@@ -7,4 +7,10 @@ spring:
       server:
         git:
           uri: https://github.com/szmiao/springcloud.git
-          search-paths: springcloud-config
+          search-paths: config
+          username: ENC(H0uY0jT/oB0ZCbVzOGUI5Q==)
+          password: ENC(QPaOXMPdPMlW3NukGKH9JrjlN+WJP+ry)
+
+jasypt:
+  encryptor:
+    password: msz
