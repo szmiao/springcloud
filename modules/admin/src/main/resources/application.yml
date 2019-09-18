@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      label: master
+      profile: dev
+      name: modules-admin, mysql
+      discovery:
+        service-id: config-server
+        enabled: true
+      fail-fast: true
