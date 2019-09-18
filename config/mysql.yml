@@ -68,5 +68,3 @@ log4j:
       sql: debug,stdout
 
   # durid登陆账号密码
-loginUsername: root
-loginPassword: 123456
