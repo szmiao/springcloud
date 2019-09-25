@@ -3,7 +3,7 @@ spring:
     config:
       label: master
       profile: dev
-      name: modules-admin, mysql
+      name: modules-admin, mysql, redis
       discovery:
         service-id: config-server
         enabled: true
