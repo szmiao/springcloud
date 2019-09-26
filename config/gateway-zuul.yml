@@ -7,9 +7,9 @@ server:
 zuul:
   routes:
     api-a:
-      path: /ordinary/**
+      path: /admin/**
       # 如果是/ribbon/**路径下的请求，则跳转到service-ribbon
-      serviceId: ordinary-user
+      serviceId: admin
     api-b:
       path: /feign/**
       # 如果是/feign/**路径下的请求，则跳转到service-feign
