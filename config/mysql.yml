@@ -37,7 +37,7 @@ spring:
 
 #mybatis配置
 mybatis:
-  mapper-locations: classpath:mapping/*/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  mapper-locations: classpath:mapper/*/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
   configuration:
     #全局启用或禁用延迟加载。当禁用时，所有关联对象都会即时加载。
     lazy-loading-enabled: false
