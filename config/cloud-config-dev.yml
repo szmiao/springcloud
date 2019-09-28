@@ -1,13 +1,17 @@
 eureka:
+  client:
+    #服务注册开关
+    registerWithEureka: true
+    #服务发现开关
+    fetchRegistry: true
+    #Eureka客户端与Eureka服务端进行交互的地址，多个中间用逗号分隔
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULTZONE}
   instance:
     statusPageUrlPath: /info
     healthCheckUrlPath: /health
-    # docker 部署开启
+    # 将自己的ip地址注册到Eureka服务中
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 10
-
-    client:
-      serviceUrl:
-         defaultZone: ${EUREKA_DEFAULTZONE}
