@@ -15,7 +15,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>user</module>
         <module>admin</module>
     </modules>
 
@@ -45,6 +44,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.32</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>24.0-jre</version>
             </dependency>
             <dependency>
                 <groupId>com.google.code.gson</groupId>

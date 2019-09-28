@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springcloud.adm.sys.dao.TAdmSysUserDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.springcloud.adm.sys.entity.TAdmSysUserEntity" id="tAdmUserPasswordMap">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="realName" column="real_name"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+        <result property="mobile" column="mobile"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="Base_Column">
+        id, username, real_name, password, salt, mobile, status, create_time, update_time
+    </sql>
+
+    <select id="queryUser" resultType="com.springcloud.adm.sys.dto.LoginUserDTO">
+        SELECT
+        user_id,
+        username,
+        token,
+        expire_time,
+        STATUS
+        FROM
+        (
+            SELECT
+            id,
+            username,
+            STATUS
+            FROM t_adm_sys_user
+            WHERE id = #{userId}
+        ) a
+        LEFT JOIN t_adm_sys_user_token b ON a.id = b.user_id
+    </select>
+
+    <select id="queryByName" resultType="com.springcloud.adm.sys.entity.TAdmSysUserEntity">
+        select
+        <include refid="Base_Column"/>
+        from
+        t_adm_sys_user
+        where username = #{name}
+    </select>
+
+    <insert id="save">
+        insert into t_adm_sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                username,
+            </if>
+            <if test="realName != null">
+                real_name,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="salt != null">
+                salt,
+            </if>
+            <if test="mobile != null">
+                mobile,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                #{username},
+            </if>
+            <if test="realName != null">
+                #{realName},
+            </if>
+            <if test="password != null">
+                #{password},
+            </if>
+            <if test="salt != null">
+                #{salt},
+            </if>
+            <if test="mobile != null">
+                #{mobile},
+            </if>
+        </trim>
+    </insert>
+</mapper>
